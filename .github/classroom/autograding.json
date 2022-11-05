@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Etapa 1",
+      "setup": "",
+      "run": "python -m unittest test_main.MyTestCase.test_etapa1",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 40
+    },
+    {
+      "name": "Etapa 2",
+      "setup": "",
+      "run": "python -m unittest test_main.MyTestCase.test_etapa2",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 30
+    },
+    {
+      "name": "Etapa 3",
+      "setup": "",
+      "run": "python -m unittest test_main.MyTestCase.test_etapa3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 30
+    }
+  ]
+}
