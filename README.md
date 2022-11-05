@@ -37,9 +37,35 @@ Input: nums = [1,1]
 Output: [2]
 ```
 
-## 3ª Etapa
+def ValidaSenha():
+    
+    senha = input('Digite a senha: ')
 
-Por fim, será necessário validar a senha do arquivo. A senha é composta por uma sequencia de `n` caracteres. A senha só
-é considerada válida
-caso todos os caracteres apareçam o mesmo número de vezes. Por exemplo, a senha `abab` é válida, pois `a` aparece duas
-vezes e `b` também. Já a senha `ababa` não é válida, pois `a` aparece três vezes e `b` apenas duas.
+    
+    aux, quantidade = [], []
+
+    for i in range(0, len(senha)):
+      
+        if len(aux) == 0:
+            aux.append(senha[i])
+            
+            quantidade.append(senha.count(senha[i]))
+        else:
+            for j in range(0, len(aux)):
+                if senha[i] == aux[j]:
+                    teste = 1
+                    break
+                else:
+                    teste = 0
+
+           
+            if teste == 0:
+                aux.append(senha[i])
+                quantidade.append(senha.count(senha[i]))
+
+    if quantidade.count(quantidade[0]) == len(quantidade):
+        print('A senha é válida')
+    else:
+        print('A senha é inválida. É fraude!')
+
+ValidaSenha()
