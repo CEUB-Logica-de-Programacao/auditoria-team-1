@@ -16,7 +16,7 @@ se o ID é válido, você deve dividi-lo em dois novos números inteiros `new1` 
 Agora, você deve verificar qual é a menor soma possível de `new1` e `new2`. Por exemplo, se `new1 = 22` e `new2 = 93`,
 a soma é 115. Caso a soma seja menor ou igual a 100, o ID é válido. Caso contrário, o ID é inválido.
 
-lista = []
+* lista = []
 id = str(id)
 id = input('Digite a senha: ')
 if len(id) < 4:
