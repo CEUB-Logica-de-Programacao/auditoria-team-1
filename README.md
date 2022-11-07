@@ -16,6 +16,24 @@ se o ID é válido, você deve dividi-lo em dois novos números inteiros `new1` 
 Agora, você deve verificar qual é a menor soma possível de `new1` e `new2`. Por exemplo, se `new1 = 22` e `new2 = 93`,
 a soma é 115. Caso a soma seja menor ou igual a 100, o ID é válido. Caso contrário, o ID é inválido.
 
+lista = []
+id = str(id)
+id = input('Digite a senha: ')
+if len(id) < 4:
+  print('ID inválido')
+else:
+  for i in range(0, len(id)):
+    lista.append(int(id[i]))
+  while len(lista) < 4:
+    lista.append(0)
+  x = sorted(lista)
+  new1 =int(x[0])*10 + int(x[2])
+  new2 =int(x[1])*10 + int(x[3])
+  if new1 + new2 >= 115:
+    print('ID inválido')
+  else:
+    print('ID válido')
+
 ## 2ª Etapa
 
 A segunda etapa consiste em verificar se existe algum voto que não foi computado. Para isso, você receberá uma
