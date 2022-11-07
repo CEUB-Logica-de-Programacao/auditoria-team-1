@@ -53,6 +53,15 @@ Output: [5,6]
 ```
 
 ```
+def etapa2(x):
+    nums = sorted(x)
+    lista2 =[]
+    for n in range(1, len(nums)+1):
+        lista2.append(n)
+    for n in nums:
+        if n in lista2:
+            lista2.remove(n)
+    return lista2
 Input: nums = [1,1]
 Output: [2]
 ```
