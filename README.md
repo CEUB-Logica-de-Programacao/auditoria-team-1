@@ -15,6 +15,26 @@ se o ID é válido, você deve dividi-lo em dois novos números inteiros `new1` 
 
 Agora, você deve verificar qual é a menor soma possível de `new1` e `new2`. Por exemplo, se `new1 = 22` e `new2 = 93`,
 a soma é 115. Caso a soma seja menor ou igual a 100, o ID é válido. Caso contrário, o ID é inválido.
+```
+lista = []
+id = str(id)
+id = input('Digite a senha: ')
+if len(id) < 4:
+  print('ID inválido')
+else:
+  for i in range(0, len(id)):
+    lista.append(int(id[i]))
+  while len(lista) < 4:
+    lista.append(0)
+  x = sorted(lista)
+  new1 =int(x[0])*10 + int(x[2])
+  new2 =int(x[1])*10 + int(x[3])
+  if new1 + new2 >= 115:
+    print('ID inválido')
+  else:
+    print('ID válido')
+ ```
+
 
 ## 2ª Etapa
 
@@ -33,13 +53,53 @@ Output: [5,6]
 ```
 
 ```
+def etapa2(x):
+    nums = sorted(x)
+    lista2 =[]
+    for n in range(1, len(nums)+1):
+        lista2.append(n)
+    for n in nums:
+        if n in lista2:
+            lista2.remove(n)
+    return lista2
 Input: nums = [1,1]
 Output: [2]
 ```
 
-## 3ª Etapa
+## 3º Etapa
+Por fim, será necessário validar a senha do arquivo. A senha é composta por uma sequencia de `n` caracteres. A senha só é considerada válida caso todos os caracteres apareçam o mesmo número de vezes. Por exemplo, a senha `abab` é válida, pois `a` aparece duas vezes e `b` também. Já a senha `ababa` não é válida, pois `a` aparece três vezes e `b` apenas duas.
 
-Por fim, será necessário validar a senha do arquivo. A senha é composta por uma sequencia de `n` caracteres. A senha só
-é considerada válida
-caso todos os caracteres apareçam o mesmo número de vezes. Por exemplo, a senha `abab` é válida, pois `a` aparece duas
-vezes e `b` também. Já a senha `ababa` não é válida, pois `a` aparece três vezes e `b` apenas duas.
+```
+def ValidaSenha():
+    
+    senha = input('Digite a senha: ')
+
+    
+    aux, quantidade = [], []
+
+    for i in range(0, len(senha)):
+      
+        if len(aux) == 0:
+            aux.append(senha[i])
+            
+            quantidade.append(senha.count(senha[i]))
+        else:
+            for j in range(0, len(aux)):
+                if senha[i] == aux[j]:
+                    teste = 1
+                    break
+                else:
+                    teste = 0
+
+           
+            if teste == 0:
+                aux.append(senha[i])
+                quantidade.append(senha.count(senha[i]))
+
+    if quantidade.count(quantidade[0]) == len(quantidade):
+        print('A senha é válida')
+    else:
+        print('A senha é inválida. É fraude!')
+
+ValidaSenha()
+```
