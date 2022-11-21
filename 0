@@ -1,0 +1,58 @@
+lista = []
+id = str(id)
+id = input('Digite a senha: ')
+if len(id) < 4:
+  print('ID inválido')
+else:
+  for i in range(0, len(id)):
+    lista.append(int(id[i]))
+  while len(lista) < 4:
+    lista.append(0)
+  x = sorted(lista)
+  new1 =int(x[0])*10 + int(x[2])
+  new2 =int(x[1])*10 + int(x[3])
+  if new1 + new2 >= 115:
+    print('ID inválido')
+  else:
+    print('ID válido')
+    
+def etapa2(x):
+    nums = sorted(x)
+    lista2 =[]
+    for n in range(1, len(nums)+1):
+        lista2.append(n)
+    for n in nums:
+        if n in lista2:
+            lista2.remove(n)
+    return lista2
+
+def ValidaSenha():
+    
+    senha = input('Digite a senha: ')
+
+    
+    aux, quantidade = [], []
+
+    for i in range(0, len(senha)):
+      
+        if len(aux) == 0:
+            aux.append(senha[i])
+            
+            quantidade.append(senha.count(senha[i]))
+        else:
+            for j in range(0, len(aux)):
+                if senha[i] == aux[j]:
+                    teste = 1
+                    break
+                else:
+                    teste = 0
+
+           
+            if teste == 0:
+                aux.append(senha[i])
+                quantidade.append(senha.count(senha[i]))
+
+    if quantidade.count(quantidade[0]) == len(quantidade):
+        print('A senha é válida')
+    else:
+        print('A senha é inválida. É fraude!')
