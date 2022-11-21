@@ -12,14 +12,11 @@ else:
   new1 =int(x[0])*10 + int(x[2])
   new2 =int(x[1])*10 + int(x[3])
   if new1 + new2 >= 115:
-    print('ID inválido')
-  else:
-    print('ID válido')
     
 def etapa2(x):
     numero = sorted(x)
     lista2 =[]
-    for n in range(1, len(nums)+1):
+    for n in range(1, len(numero)+1):
         lista2.append(n)
     for n in numero:
         if n in lista2:
